@@ -9,11 +9,26 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: grey;
+		flex-direction: column;
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='900' preserveAspectRatio='none' viewBox='0 0 1440 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1050%26quot%3b)' fill='none'%3e%3crect width='1440' height='900' x='0' y='0' fill='url(%23SvgjsLinearGradient1051)'%3e%3c/rect%3e%3cpath d='M1440 0L798.55 0L1440 358.09z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M798.55 0L1440 358.09L1440 648.27L620.3599999999999 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M620.3599999999999 0L1440 648.27L1440 692.59L308.5899999999999 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M308.5899999999999 0L1440 692.59L1440 760.44L243.76999999999992 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 900L707.96 900L0 792.4z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 792.4L707.96 900L782.1600000000001 900L0 734.31z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 734.31L782.1600000000001 900L828.59 900L0 461.1499999999999z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 461.15L828.59 900L1008.87 900L0 217.89999999999998z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1050'%3e%3crect width='1440' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='9.37%25' y1='-15%25' x2='90.63%25' y2='115%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1051'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='%2300459e' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
 	}
 	video{
 		width: 40%;
 		height: 50%;
+		visibility: hidden;
+	}
+	button{
+		width: 150px;
+		height: 40px;
+		font-size: 1.2em;
+		border-radius: 10px;
+		cursor: pointer;
+		font-weight: 1000;
+	}
+	button:hover{
+		background-color: #586fb7;
+		color: white;
+		box-shadow: 0px 2px 5px white;
 	}
 	@media(max-width: 768px){
 		video{
@@ -29,8 +44,15 @@
 	}
 </style>
 <body>
-	<video controls autoplay>
+	<button onclick="change()">Click me</button>
+	<video id="vid">
 		<source src="v.mp4" type="video/mp4">
 	</video>
 </body>
+<script type="text/javascript">
+	function change() {
+		document.getElementById("vid").style.visibility="visible";
+		document.getElementById("vid").play();
+	}
+</script>
 </html>
